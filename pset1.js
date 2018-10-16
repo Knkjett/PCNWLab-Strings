@@ -86,15 +86,22 @@ console.log("")//New line for organization
     @example - startsWithVowel('andy'); // true
     @example - startsWithVowel('Andy'); // true
 */
+//USED FOR LOOP.
+// const startsWithVowel = str => {
+//     let vowels = ['a','e','i','o','u'];
+//     let nStr = str.toLowerCase()
+//     for(let i = 0; i < vowels.length; i++){
+//         if (nStr[0] == vowels[i])
+//             return true;
+//     }   
+//     return false;
+// }
 const startsWithVowel = str => {
-    let vowels = ['a','e','i','o','u'];
-    let nStr = str.toLowerCase()
-    for(let i = 0; i <= vowels.length; i++){
-        if (nStr[0] == vowels[i]){
-            return true;
-    }
-    return false;
-    }
+    let nStr = str.toLowerCase();
+    if(nStr.charAt(0) === 'a' || nStr.charAt(0) === 'e' || nStr.charAt(0) === 'i' || nStr.charAt(0) === 'o' || nStr.charAt(0) === 'u')
+        return true;
+    else
+        return false;
 }
 console.log("Does 'taq' start with a vowel? " + startsWithVowel("taq"));
 console.log("Does 'Dfghjkl' start with a vowel? " + startsWithVowel("Dfghjkl"));
@@ -111,18 +118,28 @@ console.log("")//New line for organization
     @example - endsWithVowel('andi'); // true
     @example - endsWithVowel('AndI'); // true
 */
+//USED FOR LOOP.
+// const endsWithVowel = str => {
+//     let vowels = ['a','e','i','o','u'];
+//     let nStr = str.toLowerCase();
+//     for(let i = 0; i < vowels.length; i++){
+//         if (vowels[i] == nStr[nStr.length-1]){
+//             return true;
+//         }   
+//     }
+//     return false;
+// }
 const endsWithVowel = str => {
-    let vowels = ['a','e','i','o','u'];
     let nStr = str.toLowerCase();
-    for(let i = 0; i <= vowels.length; i++){
-        if (vowels[i] == nStr[nStr.length-1]){
-            return true;
-    }
-    console.log(nStr[3])
-    return false;
-    }
+    if(nStr.charAt(nStr.length-1) === 'a' || nStr.charAt(nStr.length-1) === 'e' || nStr.charAt(nStr.length-1) === 'i' || nStr.charAt(nStr.length-1) === 'o' || nStr.charAt(nStr.length-1) === 'u')
+        return true;
+    else
+        return false;
 }
-console.log(endsWithVowel("andie"));
+console.log("Does 'taq' end with vowel? " + endsWithVowel("taq"));
+console.log("Does 'Dfghjkl' end with vowel? " + endsWithVowel("Dfghjkl"));
+console.log("Does 'andi' end with vowel? " + endsWithVowel("andi"));
+console.log("Does 'AndI' end with vowel? " + endsWithVowel("AndI"));
 console.log("")//New line for organization
 /* 7
     @func hasVowels
@@ -134,18 +151,30 @@ console.log("")//New line for organization
     @example - hasVowels('dfghjkl'); // false
     @example - hasVowels('taq karim'); // true
 */
+//USED FOR LOOP.
+// const hasVowel = str => {
+//     let vowels = ['a','e','i','o','u','A','E','I','O','U'];
+//     for(let i = 0; i < str.length; i++){
+//         for(let j = 0; j < vowels.length; j++){
+//             if (str[i] == vowels[j]){
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
 const hasVowel = str => {
-    let vowels = ['a','e','i','o','u','A','E','I','O','U'];
-    for(let i = 0; i <= str.length; i++){
-        for(let j = 0; j <= 10; j++){
-            if (str[i] == vowels[j]){
-                return true;
-            }
-        }
-    return false;
-    }
+    let nStr = str.toLowerCase();
+    if(nStr.search('a') >= 0|| nStr.search('e') >= 0|| nStr.search('i') >= 0|| nStr.search('o') >=0|| nStr.search('u') >=0)
+            return true;
+    else
+        return false;
 }
-
+console.log("Does 'taq' have at least one vowel? " + hasVowel('taq'));
+console.log("Does 'TAQ' have at least one vowel? " + hasVowel('TAQ'));
+console.log("Does 'dfghjkl' have at least one vowel? " + hasVowel('dfghjkl'));
+console.log("Does 'taq karim' have at least one vowel? " + hasVowel('taq karim'));
+console.log("")//New line for organization
 /* 8
     @func hasUpperCase
     @param {string} str
@@ -156,7 +185,28 @@ const hasVowel = str => {
     @example - hasUpperCase('tag'); // false
     @example - hasUpperCase('taq karim'); // false
 */
+// USED FOR LOOP.
+// const hasUpperCase = str => {
+//     for(let i = 0; i < str.length; i++){
+//         for(let j = 65; j <= 90; j++){
+//             if(str[i] == String.fromCharCode(j))
+//                 return true;
+//         }
+//     }
+//     return false;
+// }
+const hasUpperCase = str => {
 
+    if(str.search('A') >=0 || str.search('B') >=0 || str.search('C') >=0 || str.search('D') >=0 || str.search('E') >=0 || str.search('F') >=0 || str.search('G') >=0 || str.search('H') >=0 || str.search('I') >=0 || str.search('J') >=0 || str.search('K') >=0 || str.search('L') >=0 || str.search('M') >=0 || str.search('N') >=0 || str.search('O') >=0 || str.search('P') >=0 || str.search('Q') >=0 || str.search('R') >=0 || str.search('S') >=0 || str.search('T') >=0 || str.search('U') >=0 || str.search('V') >=0 || str.search('W') >=0 || str.search('X') >=0 || str.search('Y') >=0 || str.search('Z') >=0)
+        return true;
+    else
+        return false;
+}
+console.log("Does 'tAq' have an upper case? " + hasUpperCase('tAq'));
+console.log("Does 'TAQ' have an upper case? " + hasUpperCase('TAQ'));
+console.log("Does 'tag' have an upper case? " + hasUpperCase('tag'));
+console.log("Does 'taq karim' have an upper case? " + hasUpperCase('taq karim'));
+console.log("")//New line for organization
 /* 9
     @func isPalindromic
     @param {string} str
@@ -165,9 +215,27 @@ const hasVowel = str => {
     @example - isPalindromic('racecar'); // true
     @example - isPalindromic('racecars'); // false
     @example - isPalindromic('bats see bees stab'); // false
-    @example - hasUpperCase('taq karim'); // false
+    @example - isPalindromic('taq karim'); // false
 */
-
+const isPalindromic = str => {
+    let rts = [];
+    let p = str.length-1;
+    for(let i = 0; i < str.length; i++){
+        rts[p] = str[i]
+        p--;
+    }
+    for(let i = 0; i < str.length; i++){
+        if(rts.join('') == str)
+            return true;
+        else
+            return false;
+    }
+}
+console.log("Is 'racecar' a palindrome? " + isPalindromic('racecar'));
+console.log("Is 'racecars' a palindrome? " + isPalindromic('racecars'));
+console.log("Is 'bats see bees stab' a palindrome? " + isPalindromic('bats see bees stab'));
+console.log("Is 'taq karim' a palindrome? " + isPalindromic('taq karim'));
+console.log("")//New Line for organization.
 /* 10
     @func getInitials
     @param {string} str
@@ -180,7 +248,16 @@ const hasVowel = str => {
     @example - getInitials('John       Smith'); // "js"
     @example - getInitials('sue RonaN'); // "sr"
 */
-
+const getInitials = str => {
+    let trimmed = str.trim;
+    // for(let i = 0; i < str.length; i++){
+    //     if(trimmed[i]==='' && trimmed[i+1] != ''){
+    //         console.log(trimmed[0]);
+    //         return trimmed[0], trimmed[i+1];
+    //     }
+    // }
+}
+console.log(getInitials("taq karim"));
 /* 11
     @func isPerfectStr
     @param {string} str
