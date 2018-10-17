@@ -217,19 +217,27 @@ console.log("")//New line for organization
     @example - isPalindromic('bats see bees stab'); // false
     @example - isPalindromic('taq karim'); // false
 */
+// const isPalindromic = str => {
+//     let rts = [];
+//     let p = str.length-1;
+//     for(let i = 0; i < str.length; i++){
+//         rts[p] = str[i]
+//         p--;
+//     }
+//     for(let i = 0; i < str.length; i++){
+//         if(rts.join('') == str)
+//             return true;
+//         else
+//             return false;
+//     }
+// }
 const isPalindromic = str => {
-    let rts = [];
-    let p = str.length-1;
-    for(let i = 0; i < str.length; i++){
-        rts[p] = str[i]
-        p--;
-    }
-    for(let i = 0; i < str.length; i++){
-        if(rts.join('') == str)
-            return true;
-        else
-            return false;
-    }
+    let rts = str.split('');
+    let rts2 = rts.reverse().join('');
+    if(str == rts2)
+        return true;
+    else
+        return false;
 }
 console.log("Is 'racecar' a palindrome? " + isPalindromic('racecar'));
 console.log("Is 'racecars' a palindrome? " + isPalindromic('racecars'));
@@ -249,15 +257,16 @@ console.log("")//New Line for organization.
     @example - getInitials('sue RonaN'); // "sr"
 */
 const getInitials = str => {
-    let trimmed = str.trim;
-    // for(let i = 0; i < str.length; i++){
-    //     if(trimmed[i]==='' && trimmed[i+1] != ''){
-    //         console.log(trimmed[0]);
-    //         return trimmed[0], trimmed[i+1];
-    //     }
-    // }
+    let trimmed = str.trim();
+    if(trimmed.lastIndexOf(' ')){
+        return trimmed[0] + trimmed[trimmed.lastIndexOf(' ')+1];
+    }
 }
-console.log(getInitials("taq karim"));
+console.log("What is the initials of 'taq karim'? " + getInitials("taq karim"));
+console.log("What is the initials of 'mo    mosayed'? " + getInitials("mo    mosayed"));
+console.log("What is the initials of 'John       Smith'? " + getInitials("John       Smith"));
+console.log("What is the initials of 'sue RonaN'? " + getInitials("sue RonaN"));
+console.log();//New Line for organization.
 /* 11
     @func isPerfectStr
     @param {string} str
@@ -272,7 +281,32 @@ console.log(getInitials("taq karim"));
     @example - isPerfectStr('asdfaeKeccc'); // false
     @example - isPerfectStr('asdfaeKeccccc'); // true
 */
+const isPerfectStr = str1 => {
+    str = str1.toLowerCase();
+    let mid = Math.floor((str.length)/2);
+    if(str.length < 3)
+        return false;
+    else{
+        if(str[mid-1] == 'a'|| str[mid-1] == 'e' || str[mid-1] == 'i' || str[mid-1] == 'o' || str[mid-1] == 'u'){
+            if(str[mid+1] == 'a'|| str[mid+1] == 'e' || str[mid+1] == 'i' || str[mid+1] == 'o' || str[mid+1] == 'u'){
+                    if(str[mid] == 'b' || str[mid] == 'c' || str[mid] == 'd' || str[mid] == 'f' || str[mid] == 'g' || str[mid] == 'h' || str[mid] == 'j' || str[mid] == 'k' || str[mid] == 'l' || str[mid] == 'm' || str[mid] == 'n' || str[mid] == 'p' || str[mid] == 'q' || str[mid] == 'r' || str[mid] == 's' || str[mid] == 't' || str[mid] == 'u' || str[mid] == 'v' || str[mid] == 'x' || str[mid] == 'z' )
+                        return true;
+                    else
+                        return false;
+                }
+            else
+                return false;
+        }
+        else
+            return false;
+    }
+}
 
+console.log("Is 'ab' a perfect string? " + isPerfectStr('ab'));
+console.log("Is 'aba' a perfect string? " + isPerfectStr('aba'));
+console.log("Is 'asdfaeKeccc' a perfect string? " + isPerfectStr('asdfaeKeccc'));
+console.log("Is 'asdfaeKeccccc' a perfect string? " + isPerfectStr('asdfaeKeccccc'));
+console.log();//New Line for organization.
 /* 12
     @func strMasher
     @param {string} str1
@@ -283,4 +317,11 @@ console.log(getInitials("taq karim"));
     @example - strMasher('help', 'me'); // "hemelp"
     @example - capitalLast('hello', 'wrold'); // "helwroldlo"
 */
+const strMasher = (str1, str2) => {
+    const mid1 = str1.slice(0,Math.ceil(str1.length/2));
+    const mid2 = str1.slice(Math.ceil(str1.length/2),str1.length);
+    return mid1 + str2 + mid2;
+}
 
+console.log("'help' and 'me' mashed together is " + strMasher('help','me'));
+console.log("'hello' and 'world' mashed together is " + strMasher('hello','wrold'));
